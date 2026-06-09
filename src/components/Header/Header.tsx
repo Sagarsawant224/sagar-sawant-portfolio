@@ -19,11 +19,10 @@ const Header = () => {
           <Link
             key={link.label}
             to={link.href}
-            className={`header__link ${
-              location.pathname === link.href
-                ? "header__link--active"
-                : ""
-            }`}
+            className={`header__link ${location.pathname === link.href
+              ? "header__link--active"
+              : ""
+              }`}
           >
             {link.label}
           </Link>

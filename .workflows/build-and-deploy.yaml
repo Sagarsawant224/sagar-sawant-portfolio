@@ -1,0 +1,14 @@
+name: Build and Deploy 
+run-name: Build and Deploy 
+on:
+  workflow_dispatch
+runs-on: 'ubuntu-latest'
+jobs:
+  deploy-to-s3:
+    name: Deploy To S3
+    steps:
+      - name: Test steps
+        run: |
+          echo "Sagar"
+        bash: shell
+

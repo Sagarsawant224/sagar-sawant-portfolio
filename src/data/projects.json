@@ -1,0 +1,10 @@
+[
+  {
+    "id": "1",
+    "title": "sagarsawant.dev",
+    "description": "This portfolio — built with React, TypeScript, and Vite. Deployed to AWS S3 behind Cloudflare DNS with ACM-managed HTTPS.",
+    "tags": ["React", "TypeScript", "Vite", "AWS S3", "Cloudflare"],
+    "github": "https://github.com/Sagarsawant224",
+    "live": "https://sagarsawant.dev"
+  }
+]
