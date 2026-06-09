@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+/* ── Base ── */
+.resume {
+  min-height: 100vh;
+  background: #f5f4f1;
+  padding: 60px 24px 100px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.resume__inner {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+
+.resume__actionbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.resume__download {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+  background: #111111;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 7px;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.resume__download:hover {
+  background: #333333;
+}
+
+/* ── Two-column body ── */
+.resume__body {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ── Shared block ── */
+.resume__block {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.resume__block:last-child {
+  margin-bottom: 0;
+}
+
+.resume__block-title {
+  font-size: 10px;
+  font-weight: 500;
+  color: #aaaaaa;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0efec;
+}
+
+/* ── Sidebar ── */
+.resume__sidebar {
+  position: sticky;
+  top: 80px;
+}
+
+/* Skills */
+.resume__skill-group {
+  margin-bottom: 16px;
+}
+
+.resume__skill-group:last-child {
+  margin-bottom: 0;
+}
+
+.resume__skill-cat {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #999999;
+  margin-bottom: 7px;
+  letter-spacing: 0.2px;
+}
+
+.resume__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.resume__tag {
+  font-size: 12px;
+  font-weight: 400;
+  color: #333333;
+  background: #f2f1ee;
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+/* Certifications */
+.resume__cert-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resume__cert-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.resume__cert-name {
+  font-size: 13px;
+  font-weight: 400;
+  color: #222222;
+  line-height: 1.4;
+}
+
+.resume__cert-code {
+  font-size: 11.5px;
+  color: #aaaaaa;
+  font-family: 'DM Mono', monospace;
+}
+
+/* Education */
+.resume__edu-degree {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #222222;
+  margin: 0 0 4px;
+}
+
+.resume__edu-school {
+  font-size: 13px;
+  color: #666666;
+  margin: 0 0 2px;
+}
+
+.resume__edu-year {
+  font-size: 12px;
+  color: #aaaaaa;
+  margin: 0;
+}
+
+/* Awards */
+.resume__award-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.resume__award-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.resume__award-title {
+  font-size: 13px;
+  font-weight: 400;
+  color: #222222;
+  line-height: 1.4;
+}
+
+.resume__award-meta {
+  font-size: 12px;
+  color: #aaaaaa;
+}
+
+/* ── Main: Experience ── */
+.resume__main .resume__block {
+  margin-bottom: 0;
+}
+
+.resume__timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.resume__job {
+  padding-bottom: 36px;
+  border-bottom: 1px solid #f0efec;
+}
+
+.resume__job:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.resume__job-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.resume__job-period {
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  background: #111111;
+  padding: 3px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.2px;
+}
+
+.resume__job-location {
+  font-size: 12px;
+  color: #aaaaaa;
+}
+
+.resume__job-role {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111111;
+  margin: 0 0 4px;
+}
+
+.resume__job-company {
+  font-size: 13px;
+  color: #888888;
+  margin: 0 0 14px;
+}
+
+.resume__bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resume__bullets li {
+  font-size: 13.5px;
+  font-weight: 300;
+  color: #444444;
+  line-height: 1.65;
+  padding-left: 14px;
+  position: relative;
+}
+
+.resume__bullets li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: #cccccc;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+  .resume__hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+  }
+
+  .resume__body {
+    grid-template-columns: 1fr;
+  }
+
+  .resume__sidebar {
+    position: static;
+  }
+}
+
+/* ── Focus Mode ── */
+
+.resume__focus-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dcdcdc;
+  background: #ffffff;
+  color: #111111;
+  padding: 10px 18px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.resume__focus-btn:hover {
+  background: #f5f5f5;
+}
+
+.resume__body--focus {
+  grid-template-columns: 1fr;
+}
+
+.resume__body--focus .resume__sidebar {
+  display: none;
+}
+
+.resume__body--focus .resume__main {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.resume__body--focus .resume__job {
+  padding-bottom: 48px;
+}
+
+.resume__body--focus .resume__job-role {
+  font-size: 20px;
+}
+
+.resume__body--focus .resume__job-company {
+  font-size: 14px;
+}
+
+.resume__body--focus .resume__bullets li {
+  font-size: 15px;
+  line-height: 1.85;
+}
