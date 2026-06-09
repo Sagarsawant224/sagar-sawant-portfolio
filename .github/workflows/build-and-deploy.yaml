@@ -7,8 +7,15 @@ jobs:
     name: Deploy To S3
     runs-on: 'ubuntu-latest'
     steps:
-      - name: Test steps
+      - name: Checkout Repo
+        uses: actions/checkout@v6
+      - name: Build
         run: |
-          echo "Sagar"
+          npm ci
+          npm build 
         shell: bash
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: /dist
 
