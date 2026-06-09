@@ -12,7 +12,7 @@ jobs:
       - name: Build
         run: |
           npm ci
-          npm build 
+          npm run build 
         shell: bash
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
