@@ -10,5 +10,5 @@ jobs:
       - name: Test steps
         run: |
           echo "Sagar"
-        bash: shell
+        shell: bash
 
