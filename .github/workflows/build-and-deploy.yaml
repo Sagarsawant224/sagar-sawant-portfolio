@@ -57,8 +57,7 @@ jobs:
           aws s3 sync dist/ s3://${{ env.S3_BUCKET_NAME }} \
             --exclude "*" \
             --include "*.html" \
-            --cache-control "no-cache, no-store, must-revalidate" \
-            --delete
+            --cache-control "no-cache, no-store, must-revalidate"
 
       - name: Sync static assets (long-cache)
         run: |
