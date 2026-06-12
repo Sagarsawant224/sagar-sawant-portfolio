@@ -2,9 +2,18 @@
   {
     "id": "1",
     "title": "sagarsawant.dev",
-    "description": "This portfolio — built with React, TypeScript, and Vite. Deployed to AWS S3 behind Cloudflare DNS with ACM-managed HTTPS.",
-    "tags": ["React", "TypeScript", "Vite", "AWS S3", "Cloudflare"],
-    "github": "https://github.com/Sagarsawant224",
+    "description": "Personal portfolio built with React, TypeScript, and Vite. Hosted on AWS S3 with CloudFront as CDN, OAC for secure S3 access, and Cloudflare managing DNS. Infrastructure provisioned with Terraform and deployed via GitHub Actions CI/CD pipeline.",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Vite",
+      "AWS S3",
+      "CloudFront",
+      "Terraform",
+      "GitHub Actions",
+      "Cloudflare"
+    ],
+    "github": "https://github.com/Sagarsawant224/sagar-sawant-portfolio",
     "live": "https://sagarsawant.dev"
   }
 ]
