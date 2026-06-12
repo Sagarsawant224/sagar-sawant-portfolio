@@ -13,7 +13,7 @@
 /* ── Page header ── */
 .projects__header {
   width: 100%;
-  max-width: 950px;
+  max-width: 1100px;
   margin-bottom: 4rem;
 
   opacity: 0;
@@ -34,10 +34,10 @@
 /* ── Grid ── */
 .projects__grid {
   width: 100%;
-  max-width: 950px;
+  max-width: 1100px;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
   gap: 1.5rem;
 
   opacity: 0;
@@ -171,7 +171,7 @@
 /* ── Tablet ── */
 @media (max-width: 900px) {
   .projects__grid {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
 }
 
