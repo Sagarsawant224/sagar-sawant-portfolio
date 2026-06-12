@@ -6,6 +6,7 @@ on:
       - main
     paths-ignore:
       - '.github/workflows/**'
+      - 'infrastructure/**'
   workflow_dispatch 
 
 permissions:
