@@ -35,3 +35,8 @@ coverage/
 # Cache
 .eslintcache
 .vite/
+
+#Terraform
+infrastructure/.terraform/
+infrastructure/*.tfstate
+infrastructure/*.tfstate.backup
