@@ -7,7 +7,7 @@ Personal portfolio built with React, TypeScript, and Vite. Deployed on AWS S3 + 
 ## Architecture
 
 ```
-![Architecture](/docs/architecture.png)
+![Architecture](https://raw.githubusercontent.com/Sagarsawant224/sagar-sawant-portfolio/main/docs/architecture.png)
 ```
 
 
