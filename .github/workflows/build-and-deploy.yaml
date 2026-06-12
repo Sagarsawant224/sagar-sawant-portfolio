@@ -6,6 +6,7 @@ on:
       - main
     paths-ignore:
       - '.github/workflows/**'
+  workflow_dispatch 
 
 permissions:
   id-token: write
@@ -61,6 +62,7 @@ jobs:
           aws s3 sync dist/ s3://${{ env.S3_BUCKET_NAME }} \
           --exclude "*" \
           --include "*.html" \
+          --include "*.pdf" \
           --cache-control "no-cache, no-store, must-revalidate"
       
 
