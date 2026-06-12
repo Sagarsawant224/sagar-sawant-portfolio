@@ -17,7 +17,7 @@ function Home() {
           <h1 className="home__heading">Hello</h1>
 
           <h2 className="home__subheading">
-            A Bit About Me LOL
+            A Bit About Me
           </h2>
 
           <p className="home__text">
