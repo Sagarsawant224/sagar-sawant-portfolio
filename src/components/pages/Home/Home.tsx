@@ -21,16 +21,8 @@ function Home() {
           </h2>
 
           <p className="home__text">
-            I'm Sagar Sawant, a Software Engineer with experience building
-            scalable cloud-native applications using AWS, Node.js, and modern
-            engineering practices.
-          </p>
-
-          <p className="home__text">
-            Over the past few years, I have worked on backend services,
-            serverless architectures, automation solutions, and large-scale
-            cloud platforms. I enjoy solving complex technical challenges and
-            creating systems that are reliable, efficient, and easy to maintain.
+            I'm Sagar Sawant, a Cloud and Backend Engineer with 5+ years of experience building scalable cloud-native applications using AWS, Node.js, and modern engineering practices, with hands-on Azure exposure. My work spans RESTful APIs, event-driven automations, and serverless architectures. 
+            I enjoy solving complex technical challenges and creating systems that are reliable, efficient, and easy to maintain.
           </p>
 
         </div>
