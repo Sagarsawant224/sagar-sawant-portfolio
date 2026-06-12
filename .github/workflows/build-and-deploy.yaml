@@ -54,7 +54,7 @@ jobs:
 
       - name: Sync HTML files (no-cache)
         run: |
-          aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }} \
+          aws s3 sync dist/ s3://${{ env.S3_BUCKET_NAME }} \
           --exclude "*" \
           --include "*.html" \
           --cache-control "no-cache, no-store, must-revalidate"
@@ -62,7 +62,7 @@ jobs:
 
       - name: Sync static assets (long-cache)
         run: |
-          aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }} \
+          aws s3 sync dist/ s3://${{ env.S3_BUCKET_NAME }} \
           --exclude "*.html" \
           --cache-control "public, max-age=31536000, immutable" \
           --delete 
