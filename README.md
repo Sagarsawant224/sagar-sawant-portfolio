@@ -7,10 +7,9 @@ Personal portfolio built with React, TypeScript, and Vite. Deployed on AWS S3 + 
 ## Architecture
 
 ```
-![Architecture](./docs/architecture.png)
+![Architecture](/docs/architecture.png)
 ```
 
-> Add architecture diagram: `![Architecture](./docs/architecture.png)`
 
 | Component | Purpose |
 |---|---|
