@@ -1,73 +1,68 @@
-# React + TypeScript + Vite
+# sagarsawant.dev
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio built with React, TypeScript, and Vite. Deployed on AWS S3 + CloudFront with Cloudflare DNS, Terraform IaC, and GitHub Actions CI/CD.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Architecture
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+![Architecture](./docs/architecture.png)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+> Add architecture diagram: `![Architecture](./docs/architecture.png)`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Component | Purpose |
+|---|---|
+| **Cloudflare** | DNS + proxy, hides CloudFront origin |
+| **ACM** | TLS certificate attached to CloudFront |
+| **CloudFront** | CDN, HTTPS termination, SPA routing fix |
+| **OAC** | Signs CloudFront → S3 requests with SigV4 |
+| **S3** | Hosts static build, not publicly accessible |
+| **Bucket policy** | Allows access only from this CloudFront distribution |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Infrastructure (Terraform)
+
+State stored remotely in a dedicated S3 bucket (`sagarsawant-portfolio-tfstate`).
+
+```bash
+cd infrastructure
+terraform init
+terraform plan
+terraform apply
+```
+
+---
+
+## AWS Auth (GitHub Actions OIDC)
+
+No long-lived keys. GitHub Actions authenticates via OIDC federation — requests a signed JWT, exchanges it with AWS STS for temporary credentials scoped to this repo and branch only.
+
+```yaml
+permissions:
+  id-token: write
+  contents: read
+```
+
+---
+
+## Deployment
+
+Every push to `main` (excluding `infrastructure/**` and `.github/workflows/**`) triggers:
+
+1. `npm run build` → `dist/`
+2. Sync HTML + PDF → S3 (`no-cache`)
+3. Sync assets → S3 (`max-age=31536000, immutable`, `--delete`)
+4. Invalidate CloudFront `/*`
+
+---
+
+## Local dev
+
+```bash
+npm install
+npm run dev
+npm run build
 ```
