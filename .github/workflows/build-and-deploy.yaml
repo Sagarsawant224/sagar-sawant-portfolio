@@ -8,6 +8,7 @@ on:
       - '.github/workflows/**'
       - 'infrastructure/**'
       - 'docs/**'
+      - 'README.md'
   workflow_dispatch:
 
 permissions:
